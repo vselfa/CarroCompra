@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lista Compra</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="home">Home</string>
+    <string name="adapter">Productes</string>
+    <string name="productes">Productes</string>
+</resources>
