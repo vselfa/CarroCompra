@@ -18,7 +18,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class NewProduct extends MainMenu {
+public class NewProduct extends MainActivity {
     ImageView foto;
     ImageButton openCamera;
 
