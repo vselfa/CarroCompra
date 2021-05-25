@@ -24,7 +24,6 @@ public class MainActivity extends MainMenu {
 
     FirebaseDatabase  database;
     DatabaseReference myRef ;
-
     static List<Producte> llistaProductes;
 
     @Override
