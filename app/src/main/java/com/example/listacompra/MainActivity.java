@@ -34,7 +34,6 @@ public class MainActivity extends MainMenu {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         // Carreguem la llista de productes al principi
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Productes");
