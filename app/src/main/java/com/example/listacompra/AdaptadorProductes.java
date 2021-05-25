@@ -46,7 +46,7 @@ public class AdaptadorProductes extends BaseAdapter {
         Glide.with(context).load(item.getFoto()).into(imgProduct);
 
         TextView nameProduct = (TextView) convertView.findViewById(R.id.nameProduct);
-        nameProduct.setText(item.nom);
+        nameProduct.setText(item.getNomProducte());
 
         return convertView;
 

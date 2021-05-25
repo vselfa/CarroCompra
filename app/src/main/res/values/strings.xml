@@ -5,4 +5,13 @@
     <string name="home">Home</string>
     <string name="adapter">Productes</string>
     <string name="productes">Productes</string>
+
+    <string name="menjar_nom">Nom producte</string>
+    <string name="menjar_descripcio">Descripció producte</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="list_view">Llista productes</string>
+
+    <string name="check_toast">Producte seleccionat </string>
+
 </resources>

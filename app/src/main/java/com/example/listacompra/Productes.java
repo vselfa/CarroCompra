@@ -13,68 +13,33 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Productes extends MainActivity {
-    AdaptadorProductes adapta;
-    ArrayList <Producte> llista;
     ListView lv1;
-    DatabaseReference myref;
-    FirebaseDatabase  database;
-
+    List<Producte> llistaProductes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view);
 
+        llistaProductes =new ArrayList<>();
+        Bundle b = this.getIntent().getExtras();
+        if(b!=null)   llistaProductes = b.getParcelable("products");
 
-        database = FirebaseDatabase.getInstance();
+        Log.d ("AAA", "Productes class. Num. productes = " + llistaProductes.size() );
 
-        myref = database.getReference("Productes");
-        llista =  new ArrayList<>();
-        lv1 = findViewById(R.id.lv1);
+        lv1 = (ListView) findViewById(R.id.lv1);
 
-        carregarLista();
-        myref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
+        for( int i = 0; i < llistaProductes.size(); i++) {
+               Log.d ("AAA", "Productes noms = " + llistaProductes.get(i).getNomProducte());
+        }
 
-                    for (DataSnapshot producteSnapshot : snapshot.getChildren()) {
-
-                        String nom = producteSnapshot.child("nom").getValue().toString();
-                        String quan = producteSnapshot.child("quantitat").getValue().toString();
-                        String url = producteSnapshot.child("foto").getValue().toString();
-                        int quantitat = Integer.parseInt(quan);
-                        Producte producte = new Producte(nom,url, quantitat);
-                        Log.e("producte","nom" + producte.nom);
-                        llista.add(producte);
-                    }
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-
-        });
-        adapta();
-    }
-
-    private void carregarLista() {
+        Log.d ("AAA", "Productes class fi" );
 
 
-
-
-
-
-    }
-    public void adapta(){
-
-        adapta = new AdaptadorProductes(this,llista);
-        lv1.setAdapter(adapta);
+        //lv1.setAdapter(new CustomArrayAdapter(getApplicationContext(), llistaProductes));
     }
 
 }

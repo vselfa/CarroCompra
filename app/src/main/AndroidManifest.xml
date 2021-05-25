@@ -11,16 +11,18 @@
         android:roundIcon="@drawable/iconolista"
         android:supportsRtl="true"
         android:theme="@style/Theme.ListaCompra">
+
         <activity android:name=".NewProduct"></activity>
         <activity android:name=".Carrito" />
         <activity android:name=".Productes" />
+        <activity android:name=".ListViewActivity" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ListaCompra.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
